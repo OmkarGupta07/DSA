@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
@@ -12,25 +13,25 @@ public class DSA
 
     static void BubbleSort(int[] arrayBack)
     {
-        for (int i = 0; i < arrayBack.Length -1 ; i++)
+        for (int i = 0; i < arrayBack.Length - 1; i++)
         {
-            for (int j = i+1 ; j < arrayBack.Length ; j++)
+            for (int j = i + 1; j < arrayBack.Length; j++)
             {
-                Console.WriteLine("[{0}]", string.Join(", ", arrayBack) );
+                Console.WriteLine("[{0}]", string.Join(", ", arrayBack));
                 Console.WriteLine($"{arrayBack[j]} - {arrayBack[j + 1]}");
                 if (arrayBack[j] > arrayBack[j + 1])
                 {
-                
+
                     int temp;
                     temp = arrayBack[j];
                     arrayBack[j] = arrayBack[j + 1];
                     arrayBack[j + 1] = temp;
 
-                    
+
 
                 }
 
-                
+
             }
         }
     }
@@ -38,7 +39,7 @@ public class DSA
     static void SelectionASCSort(int[] array) {
         //ASC ORDER
         int j;
-        for (int i = 0; i < array.Length-1 ; i++)
+        for (int i = 0; i < array.Length - 1; i++)
         {
             int BigValueIndex = i;
             for (j = i + 1; j < array.Length; j++)
@@ -68,7 +69,7 @@ public class DSA
     static void SelectionDESCSort(int[] array)
     {
         //ASC ORDER
-        for (int i = array.Length-1 ; i > 1; i--)
+        for (int i = array.Length - 1; i > 1; i--)
         {
             int BigValueIndex = i;
             for (int j = i - 1; j >= 0; j--)
@@ -94,31 +95,31 @@ public class DSA
 
     }
 
-    public static int[] InsertionSort(int[] arr )
+    public static int[] InsertionSort(int[] arr)
     {
-        Int64 j,temp;
+        Int64 j, temp;
 
         //8,1,2, 6, 4, 0
         for (int i = 1; i < arr.Length; i++)
         {
             temp = arr[i];
-            
+
             Console.Write($" temp {temp}");
-            Console.WriteLine($" i - {arr[i]} j - {arr[i-1]} j+1 - {arr[i+1]}");
-            for (j = i - 1;  j >= 0; j--)
+            Console.WriteLine($" i - {arr[i]} j - {arr[i - 1]} j+1 - {arr[i + 1]}");
+            for (j = i - 1; j >= 0; j--)
             {
                 if (arr[j] > temp)
-                {   
-                    arr[j+1] = arr[j];
+                {
+                    arr[j + 1] = arr[j];
                 }
                 else
                 {
                     break;
                 }
-            } 
-              
+            }
 
-            arr[j+1] = (int)temp;
+
+            arr[j + 1] = (int)temp;
         }
 
         return arr;
@@ -140,13 +141,13 @@ public class DSA
             else if (i % 3 != 0 && i % 5 == 0)
                 Console.WriteLine("Buzz");
             else
-               Console.WriteLine(i);
-            
+                Console.WriteLine(i);
+
         }
     }
 
 
-    public static int[] LC2sum(int[] array,int target)
+    public static int[] LC2sum(int[] array, int target)
     {
         List<int> temp = new List<int>();
         //[2,7,11,15]
@@ -154,9 +155,9 @@ public class DSA
         for (int i = 0; i < array.Length; i++)
         {
 
-            for (int j =  i + 1; j < array.Length; j++)
+            for (int j = i + 1; j < array.Length; j++)
             {
-               int Sum =array[i]+array[j];
+                int Sum = array[i] + array[j];
                 //Console.WriteLine($"{array[i] } { array[j]}");
                 //Console.WriteLine(Sum);
                 if (Sum == target)
@@ -164,7 +165,7 @@ public class DSA
                     //Console.WriteLine(Sum);
                     temp.Add(j);
                     temp.Add(i);
-                     return temp.ToArray();
+                    return temp.ToArray();
                 }
 
 
@@ -183,16 +184,16 @@ public class DSA
             ****     678910
             ****     11121314
             ****      ....    */
-        
+
         int n = 5;
         int pr = 1;
-        
+
         for (int i = 1; i < n; i++)
         {
-           
+
             for (int j = 0; j < n; j++)
             {
-                
+
                 Console.Write(pr);
                 pr++;
             }
@@ -205,8 +206,8 @@ public class DSA
     {
 
         Console.WriteLine("Enter Rows");
-        Int64 n= Convert.ToInt64(Console.ReadLine());
-        Console.WriteLine("N IS "+ n);
+        Int64 n = Convert.ToInt64(Console.ReadLine());
+        Console.WriteLine("N IS " + n);
 
         for (int i = 0; i <= n; i++)
         {
@@ -252,11 +253,11 @@ public class DSA
         Console.WriteLine("Enter Rows");
         Int64 n = Convert.ToInt64(Console.ReadLine());
         Console.WriteLine("N IS " + n);
-       // Int64 a = n;
+        // Int64 a = n;
 
         for (Int64 i = n; i >= 1; i--)
         {
-            Int64 a=n;
+            Int64 a = n;
 
             for (Int64 j = n; j >= 1; j--)
             {
@@ -284,7 +285,7 @@ public class DSA
 
         for (int i = 1; i <= n; i++)
         {
-            for (int j = 1; j  <= i; j++)
+            for (int j = 1; j <= i; j++)
             {
                 Console.Write("*");
             }
@@ -360,10 +361,10 @@ public class DSA
 
         //Mthod BY Kunal Khus.
 
-        for (Int64 row= 0; row < 2*n; row++)
+        for (Int64 row = 0; row < 2 * n; row++)
         {
             //pattern6
-            Int64 ToatalSpace =row > n ? 2*n-row:row;
+            Int64 ToatalSpace = row > n ? 2 * n - row : row;
             for (Int64 j = 0; j <= row; j++)
             {
                 Console.Write("*");
@@ -383,7 +384,7 @@ public class DSA
 
     public static void pattern8()
     {
-        Int64 n=ReturnstherowNo();
+        Int64 n = ReturnstherowNo();
         Int64 TotalSpaces;
 
         //pattern6
@@ -398,7 +399,7 @@ public class DSA
 
             for (int col = 0; col <= row; col++)
             {
-                Console.Write("*"); 
+                Console.Write("*");
             }
             Console.WriteLine();
 
@@ -421,27 +422,27 @@ public class DSA
 
     public static void pattern9()
     {
-        Int64 n=ReturnstherowNo();
+        Int64 n = ReturnstherowNo();
         Int64 TotalSpaces;
         //pattern8 pyramid-
 
 
         for (int row = 0; row < n; row++)
         {
-            TotalSpaces=n- row;
+            TotalSpaces = n - row;
 
             for (int col = 0; col <= n; col++)
             {
-                if (col%2==0)
+                if (col % 2 == 0)
                 {
                     Console.Write("*");
                 }
-                else { 
-                    
-                    Console.Write(" "); 
-                }    
+                else {
+
+                    Console.Write(" ");
+                }
             }
-            Console.WriteLine();    
+            Console.WriteLine();
 
 
         }
@@ -453,27 +454,27 @@ public class DSA
 
 
     public static int Reverse(int x)
-    { 
-        int no, ans=0;
-        for (; x != 0; )
+    {
+        int no, ans = 0;
+        for (; x != 0;)
         {
             no = x % 10;
-            ans= (ans * 10) + no;
-            x= x / 10;
-            
+            ans = (ans * 10) + no;
+            x = x / 10;
+
         }
         return ans;
     }
 
 
     public static void dectobin(int x)
-    { 
-        int ans = 0,val=0,comps=0,dec=1,add=0;
-        
-       while (x != 0){
-            ans=x % 2;
-            val=(val * 10) + ans;
-            x=x/2;
+    {
+        int ans = 0, val = 0, comps = 0, dec = 1, add = 0;
+
+        while (x != 0) {
+            ans = x % 2;
+            val = (val * 10) + ans;
+            x = x / 2;
             if (val == 1)
             {
                 ans = 0;
@@ -486,7 +487,7 @@ public class DSA
             }
 
 
-       }
+        }
         //val = 0;
         //while (comps!=0)
         //{           
@@ -501,16 +502,16 @@ public class DSA
         //}
 
         //Console.WriteLine(val);
-       
+
     }
-    
+
     public static void power2(int n)
     {
         int max = 31;
         for (int i = 1; i < max; i++)
         {
 
-            if (Math.Pow(2,i) == n)
+            if (Math.Pow(2, i) == n)
             {
                 Console.WriteLine("true");
                 break;
@@ -522,11 +523,11 @@ public class DSA
 
     public static bool SameafterReversal(int n)
     {
-        int res=0,prevno=n;
+        int res = 0, prevno = n;
         for (int i = 0; i < 2; i++)
         {
             n = reverseno(n);
-           
+
 
         }
         //n =res;
@@ -535,17 +536,17 @@ public class DSA
         {
             return true;
         }
-        else 
+        else
             return false;
 
 
-        
+
 
     }
 
-    static int  reverseno(int n)
+    static int reverseno(int n)
     {
-        int a,b=0;
+        int a, b = 0;
         while (n != 0)
         {
             a = n % 10;
@@ -562,17 +563,17 @@ public class DSA
     static void Arrys()
     {
 
-        int size=0;
+        int size = 0;
         //Wrking With Arrys
         Console.WriteLine("Enter Size of an array");
         size = Convert.ToInt32(Console.ReadLine());
 
-        int[] arr= new int[size];
+        int[] arr = new int[size];
         Console.WriteLine("Enter Elements in Array");
 
         for (int i = 0; i < size; i++)
         {
-            arr[i]= Convert.ToInt32(Console.ReadLine());
+            arr[i] = Convert.ToInt32(Console.ReadLine());
         }
 
         Console.WriteLine("Elements in Array");
@@ -581,7 +582,7 @@ public class DSA
 
             Console.WriteLine(arr[i]);
 
-           
+
         }
 
         Console.WriteLine("Min Element in Array");
@@ -611,11 +612,11 @@ public class DSA
 
         Console.WriteLine("Adding all elements of an array ");
 
-        int sum=0;
+        int sum = 0;
 
         for (int i = 0; i < arr.Length; i++)
         {
-            sum= sum + arr[i];
+            sum = sum + arr[i];
         }
         Console.WriteLine("Sum of elements is " + sum);
 
@@ -633,7 +634,7 @@ public class DSA
 
     }
 
-    static bool LinearSearch(int[] arr,int key)
+    static bool LinearSearch(int[] arr, int key)
     {
         for (int i = 0; i < arr.Length; i++)
         {
@@ -648,13 +649,13 @@ public class DSA
     static void ReverseArray(int[] arr)
     {
         int temp;
-        for (int i = 0; i < arr.Length /2; i++)
+        for (int i = 0; i < arr.Length / 2; i++)
         {
 
 
-                temp = arr[arr.Length - i-1];
-                arr[arr.Length - i-1] = arr[i];
-                arr[i] = temp;
+            temp = arr[arr.Length - i - 1];
+            arr[arr.Length - i - 1] = arr[i];
+            arr[i] = temp;
 
 
         }
@@ -678,8 +679,8 @@ public class DSA
             Console.Write(item);
         }
 
-        int temp,val=1;
-        for (int i = 0; i < arr.Length; i+=2)
+        int temp, val = 1;
+        for (int i = 0; i < arr.Length; i += 2)
         {
             if (arr.Length - 1 == i)
                 val = 0;
@@ -692,7 +693,7 @@ public class DSA
         }
 
         Console.WriteLine("After Swapping");
-                                                                                                                                                                                                     
+
         foreach (var item in arr)
         {
             Console.Write(item);
@@ -705,13 +706,13 @@ public class DSA
         int temp;
         for (int i = 0; i < arr.Length; i++)
         {
-            for (int j = i+1; j < arr.Length; j++)
+            for (int j = i + 1; j < arr.Length; j++)
             {
                 if (arr[i] == arr[j])
                 {
                     break;
                 }
-               
+
             }
         }
 
@@ -721,13 +722,13 @@ public class DSA
 
     static bool Occurence(int[] arr)
     {
-       Dictionary<int,int> hash= new Dictionary<int, int>();
-       Int64 countOfOccurence = 1;
-       bool Uniqueocc = true;
+        Dictionary<int, int> hash = new Dictionary<int, int>();
+        Int64 countOfOccurence = 1;
+        bool Uniqueocc = true;
 
         for (int i = 0; i < arr.Length; i++)
         {
-            for (int j = i+1; j < arr.Length; j++)
+            for (int j = i + 1; j < arr.Length; j++)
             {
                 if ((!hash.ContainsKey(arr[i])) /*&& arr[i] == arr[j]*/)
                 {
@@ -747,13 +748,13 @@ public class DSA
                 hash.Add(arr[i], (int)countOfOccurence);
                 countOfOccurence = 1;
             }
-            
+
 
         }
-        countOfOccurence=0;
+        countOfOccurence = 0;
         foreach (int key in hash.Values)
         {
-             countOfOccurence = hash.Values.Count(v => v == key);
+            countOfOccurence = hash.Values.Count(v => v == key);
 
             if (countOfOccurence > 1) {
                 Uniqueocc = false;
@@ -775,56 +776,24 @@ public class DSA
         }
     }
 
-    
-    static List<Int32> negate(int[]arr)
+
+    static List<Int32> negate(int[] arr)
     {
 
-       
-            List<Int32> ans=new List<Int32>();
-            for (int i = 0; i < arr.Length; i++)
-            {
-                int index = Math.Abs(arr[i]) - 1;
-                if (arr[index] < 0)
-                    ans.Add(Math.Abs(arr[i]));
-                else
-                    arr[index] *= -1;
-            }
-            return ans;
-    }
 
-    
-    static int InserPos(int[] arr,int n)
-    {
-        int res;
-        //Search Insert position 
+        List<Int32> ans = new List<Int32>();
         for (int i = 0; i < arr.Length; i++)
         {
-            if (n== arr[i])
-            {
-                return i;
-            }
-            else if(i== arr.Length-1)
-                return i+1;
+            int index = Math.Abs(arr[i]) - 1;
+            if (arr[index] < 0)
+                ans.Add(Math.Abs(arr[i]));
             else
-            {
-                res=n - arr[i];
-                Console.WriteLine($"{n} {arr[i]} {n - arr[i]}");
-
-                if (res == 0 || res == 1)
-                    return res = res == 0 ? i : i + 1;
-                else if (i == 0 && res == -1)
-                    return i;
-                else if (res < 0 &&  i !=0 )
-                {   
-                     if (n - arr[i - 1] > 0)
-                        return i; 
-                }
-
-                }
-            }
-        return 0;
-
+                arr[index] *= -1;
+        }
+        return ans;
     }
+
+
 
 
     #region Return Duplicates 
@@ -853,13 +822,13 @@ public class DSA
         int index;
         for (int i = 0; i < arr.Length; i++)
         {
-            index= Math.Abs(arr[i])-1;
+            index = Math.Abs(arr[i]) - 1;
 
             if (arr[index] > 0)
                 arr[index] *= -1;
             else
                 res.Add(Math.Abs(arr[i]));
-            
+
         }
         return res;
 
@@ -868,12 +837,12 @@ public class DSA
     #endregion
 
     #region IntersectionOfanarray
-    static List<int> Intersect(int[] arr,int[] arr2) 
+    static List<int> Intersect(int[] arr, int[] arr2)
     {
         List<int> res = new List<int>();
         for (int i = 0; i < arr.Length; i++)
         {
-            for (int j = 0; j < arr2.Length  ; j++)
+            for (int j = 0; j < arr2.Length; j++)
             {
                 if (arr[i] == arr2[j])
                 {
@@ -888,7 +857,7 @@ public class DSA
         }
 
         return res;
-        
+
 
     }
     #endregion
@@ -896,25 +865,25 @@ public class DSA
     #region Sort01
     static void Sort01(int[] arr)
     {
-        int j=arr.Length/2,k=arr.Length,swap;
+        int j = arr.Length / 2, k = arr.Length, swap;
 
         for (int i = 0; i < arr.Length; i++)
         {
             if (arr[i] == 0)
                 i++;
-            
+
             if (arr[i] > arr[j])
             {
-                swap= arr[i];
+                swap = arr[i];
                 arr[i] = arr[j];
                 arr[j] = swap;
                 j--;
 
             }
-            if (arr[i] < arr[j] && arr[j]==1)
+            if (arr[i] < arr[j] && arr[j] == 1)
                 j -= 1;
 
-            if (arr[i] < arr[j]  && arr[j] < arr[k] && arr[k] == 2)
+            if (arr[i] < arr[j] && arr[j] < arr[k] && arr[k] == 2)
                 k -= 1;
 
 
@@ -927,13 +896,13 @@ public class DSA
     #region sort012(1)
     static void Sort012(int[] arr)
     {
-        int j=0,swap;
+        int j = 0, swap;
 
         for (int i = 0; i < arr.Length; i++)
         {
-            
-             j = i + 1;
-          
+
+            j = i + 1;
+
             //}
             if (arr[i] == 0)
                 i++;
@@ -957,7 +926,7 @@ public class DSA
             //if (arr[i] < arr[j] && arr[j] == 1)
             //    j += 1;
 
-            
+
 
 
 
@@ -966,11 +935,11 @@ public class DSA
     #endregion
 
     #region SORT012(2BEST EYE OF THE TIGER)
-    public static void Sort120ETT(int[] arr) 
+    public static void Sort120ETT(int[] arr)
     {
-       int j,k=arr.Length-1,swap;
+        int j, k = arr.Length - 1, swap;
 
-        for (int i = 0; i < arr.Length/2; i++)
+        for (int i = 0; i < arr.Length / 2; i++)
         {
             j = i + 1;
             if (arr[k] == 2)
@@ -1007,14 +976,14 @@ public class DSA
     #endregion
 
     #region
-    public static int BinarySearch(int[] arr,int key)
+    public static int BinarySearch(int[] arr, int key)
     {
-        int start=0,end=arr.Length-1,mid;
-        mid=start+(end-start)/2;
+        int start = 0, end = arr.Length - 1, mid;
+        mid = start + (end - start) / 2;
 
-        for (; start <=end; )
+        for (; start <= end;)
         {
-            if (arr[mid]==key)
+            if (arr[mid] == key)
             {
                 return mid;
             }
@@ -1025,7 +994,7 @@ public class DSA
             }
             else
             {
-                end= mid - 1;
+                end = mid - 1;
             }
 
             mid = start + (end - start) / 2;
@@ -1037,45 +1006,375 @@ public class DSA
     #endregion
 
     #region NumberofOccurence
+    static int[] NoOfOccur(int[] arr, int key)
+    {
+        HashSet<int> result = new HashSet<int>();
+        int start = 0, end = arr.Length - 1, mid;
+        mid = start + (end - start) / 2;
 
-#end
+        for (; start <= end;)
+        {
+            if (arr[mid] == key)
+            {
+                result.Add(mid);
+                end = mid - 1;
+            }
+
+
+            if (key < arr[mid])
+            {
+                end = mid - 1;
+            }
+            else if (key > arr[mid])
+            {
+                start = mid + 1;
+
+            }
+
+
+            mid = start + (end - start) / 2;
+
+        }
+
+        return result.ToArray();
+
+    }
+    #endregion
+
+    #region PeakindexofMountain
+    static int PeakindexofMountain(int[] arr)
+    {
+        int start = 0, end = arr.Length - 1, mid;
+        mid = start + (end - start) / 2;
+        for (; start <= end;)
+        {
+            if (mid > 0 && arr[mid - 1] < arr[mid] && arr[mid] > arr[mid + 1])
+            {
+                return mid;
+            }
+
+            if (arr[mid] > arr[mid - 1])
+            {
+                //end = mid /*+ 1*/;
+                start = mid;
+            }
+            else
+            {
+                //start = mid-1 /*- 1*/;
+                end = mid;
+            }
+
+            mid = start + (end - start) / 2;
+            if (mid == 0) { mid += 1; }
+
+        }
+
+
+        return -1;
+    }
+    #endregion
+
+
+
+  
+
+
+
+    //Lower Bound4
+
+    static int LowerBound(int[] arr, int target)
+    {
+        int start = 0, end = arr.Length - 1, mid;
+        mid = start + (end - start) / 2;
+        for (; start <= end;)
+        {
+            if (arr[mid] == target)
+            {
+                return mid;
+            }
+
+            if (target > arr[mid])
+                start = mid + 1;
+            else
+                end = mid - 1;
+
+            mid = start + (end - start) / 2;
+
+        }
+        return start;
+
+    }
+
+    //UpperBound
+    static int UpperBound(int[] arr, int target)
+    {
+        int start = 0, end = arr.Length - 1, mid;
+        mid = start + (end - start) / 2;
+        for (; start <= end;)
+        {
+            //if (arr[mid] > target)
+            //{
+            //    return mid;
+            //}
+
+            if (target >= arr[mid])
+                start = mid + 1;
+
+            else
+            {
+
+            }
+            end = mid - 1;
+
+
+
+            mid = start + (end - start) / 2;
+
+        }
+        return start;
+
+    }
+
+
+    
+
+    //First & LastIndex of A number <summary>
+   static int[] firstAndLastPosition(int[] arr, int target)
+    {
+
+        int start = 0, end = arr.Length - 1, mid,ans=-1;
+        int[] result = { ans, ans };
+
+        mid = start + (end - start) / 2;
+
+        for (;start<=end;) 
+        {
+            if (arr[mid]== target)
+            {
+                ans= mid;
+            }
+
+            if (target > arr[mid])
+            {
+                start = mid + 1;
+            }
+            else
+            {
+                end = mid - 1;
+            }
+            mid = start + (end - start) / 2;
+
+        }
+        result[0]=ans;
+
+        start = ans+1;end = arr.Length - 1; ans=-1;
+        mid = start + (end - start) / 2;
+
+        for (; start <= end;)
+        {
+            if (arr[mid] == target)
+            {
+                ans = mid;
+            }
+
+            if (target >= arr[mid])
+            {
+                start = mid + 1;
+            }
+            else
+            {
+                end = mid - 1;
+            }
+            mid = start + (end - start) / 2;
+
+        }
+        result[1] = ans;
+
+
+        return result.ToArray();
+
+   }
+
+    //CeilTheFloor
+    static int[] CeilTheFloor(int[] arr, int target)
+    {
+        int[] result = { -1, -1 };
+        int start = 0, end = arr.Length - 1, mid, ans = -1;
+        mid = start + (end - start) / 2;
+
+        for (; start <= end;)
+        {
+            if (target >= arr[mid])
+            {
+                ans = mid;
+                start = mid + 1;
+            }
+            else if (target > arr[mid])
+            {
+                start = mid + 1;
+
+            }
+            else {
+                end = mid - 1;
+            }
+            mid = start + (end - start) / 2;
+
+        }
+
+
+        if (ans==-1)
+        {
+
+            start = 0;
+        }
+        else
+        {
+            result[0] = arr[ans];
+
+            start = ans;
+        }
+
+
+        end = arr.Length - 1; ans = -1;
+        mid = start + (end - start) / 2;
+
+        for (; start <= end;)
+        {
+            if (target <= arr[mid])
+            {
+                ans = mid;
+                end = mid - 1;
+
+                //start = mid + 1;
+            }
+            else if (target > arr[mid])
+            {
+                start = mid + 1;
+
+            }
+            else
+            {
+                end = mid - 1;
+            }
+            mid = start + (end - start) / 2;
+
+        }
+        if (ans != -1)
+            result[1] = arr[ans];
+
+
+
+        return result;
+
+    }
+
+    static int NoOfOccurence(int[] arr,int target)
+    {
+        int start = 0, end = arr.Length - 1, mid, FirstIndex=0,Lastindex=0;
+
+        mid = start + (end - start) / 2;
+
+        for (; start <= end;)
+        {
+            if (arr[mid] == target)
+            {
+                FirstIndex = mid;
+            }
+
+            if (target > arr[mid])
+            {
+                start = mid + 1;
+            }
+            else
+            {
+                end = mid - 1;
+            }
+            mid = start + (end - start) / 2;
+
+        }
+
+        start = FirstIndex + 1; end = arr.Length - 1; 
+        mid = start + (end - start) / 2;
+
+        for (; start <= end;)
+        {
+            if (arr[mid] == target)
+            {
+                Lastindex = mid;
+            }
+
+            if (target >= arr[mid])
+            {
+                start = mid + 1;
+            }
+            else
+            {
+                end = mid - 1;
+            }
+            mid = start + (end - start) / 2;
+
+        }
+
+
+
+        return Lastindex - FirstIndex + 1;
+    }
+
+    //SearchInRotatedArray
+     static int SearchInRotatedArray(int[] nums, int target)
+    {
+        int start = 0, end = (nums.Length - 1)/2, mid;
+        mid = start + (end - start) / 2;
+
+        for (; start <= end;)
+        {
+            if (target == nums[mid])
+            {
+
+                return mid;
+
+            }
+
+            if (target > nums[mid])
+            {
+                start = mid + 1;
+
+
+            }
+            else
+            {
+
+                end = mid - 1;
+
+            }
+            mid = start + (end - start) / 2;
+
+        }
+
+
+
+
+
+        return -1;
+    }
+
+
+
+
 
     public static void Main(string[] args)
     {
-       int[] vals = { 1,3,5,7,8,11};
-        //int[] vals1 = { 2, 2, 1, 1 ,2 ,0 ,2 ,0 ,2 ,1 };
-        //        10
-        //10
-        //2 2 2 2 2 2 2 2 2 2
-        //10
-        //1 1 1 1 1 1 1 1 1 1
-        //10
-        //0 0 0 0 0 0 0 0 0 0
-        //10
-        //1 0 1 0 1 0 1 0 1 0
-        //10
-        //1 2 2 1 1 2 2 1 1 2
-        //10
-        //0 1 2 0 1 2 0 1 2 0
-        //10
-        //0 2 1 0 2 1 0 2 1 2
-        //10
-        //2 2 2 2 2 0 0 0 0 0
-        //10
-        //2 2 1 1 2 0 2 0 2 1
-        //10
-        //0 0 0 0 0 1 1 1 2 2
-        //negate(vals);
-        //ops(vals);
-        //var Hashvals=Occurence(vals);
-        //
-        //var Index= DuplicatebyNeag(vals);
-        // var Index = Intersect(vals1, vals);
-        //Sort120ETT(vals1);
-        int Index=BinarySearch(vals, 1);
-        Console.WriteLine(Index);
+
+
+
+        int[] vals = { 1 ,1 ,1 ,2 ,2 ,3 ,3 };
+         var Index= NoOfOccurence(vals,3);
+         Console.WriteLine(Index);
 
         //Console.WriteLine(Index);
+
+
+
 
 
     }
